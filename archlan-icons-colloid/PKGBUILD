@@ -6,13 +6,13 @@
 #    By: Lanhild <archlan@protonmail.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/16 21:23:48 by Lanhild           #+#    #+#              #
-#    Updated: 2022/01/20 18:17:35 by Lanhild          ###   ########.fr        #
+#    Updated: 2022/02/06 18:30:56 by Lanhild          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 pkgname=archlan-icons-colloid
 pkgver=1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="ArchLan icons theme collection"
 url="https://github.com/archlan-icons"
 arch=('any')
@@ -31,5 +31,5 @@ prepare() {
 package() {
 	local _iconsdir=${pkgdir}/usr/share/icons
 	mkdir -p "$_iconsdir"
-	cp -r ${srcdir}/* "$_iconsdir"
+	cp -rf ${srcdir}/* "$_iconsdir"
 }
