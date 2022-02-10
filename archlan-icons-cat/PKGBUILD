@@ -1,0 +1,35 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    PKGBUILD                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: Lanhild <archlan@protonmail.com>           +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/01/16 21:23:48 by Lanhild           #+#    #+#              #
+#    Updated: 2022/02/10 16:34:29 by Lanhild          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+pkgname=archlan-icons-cat
+pkgver=1.0
+pkgrel=1
+pkgdesc="ArchLan icons theme collection"
+url="https://github.com/archlan-icons"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=()
+conflicts=()
+groups=('archlan-icons' 'archlan-de')
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+	local _iconsdir=${pkgdir}/usr/share/icons
+	mkdir -p "$_iconsdir"
+	cp -rf ${srcdir}/* "$_iconsdir"
+}
